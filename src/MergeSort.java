@@ -3,6 +3,7 @@ import java.util.Arrays;
 
 public class MergeSort {
 
+	// randomly select numbers to array
 	public static int[] SetArray(int[] array) {
 		for (int i = 0; i < array.length; i++) {
 			array[i] = (int) (Math.random() * 100);
@@ -31,6 +32,7 @@ public class MergeSort {
 			// scope
 			int[] right;
 			// array.length = even or odd
+			//if array is odd and divided by two, right array has (left +1)
 			if (array.length % 2 == 0) {
 				right = new int[midIndex];
 			} else {
@@ -44,7 +46,8 @@ public class MergeSort {
 			for (int a = 0, j = midIndex; j < array.length; j++, a++) {
 				right[a] = array[j];
 			}
-
+			
+			//to make sure my code is correct or not
 			System.out.println("Merge process: ");
 			System.out.println(Arrays.toString(left));
 			System.out.println(Arrays.toString(right));
@@ -57,7 +60,9 @@ public class MergeSort {
 			int leftIndex = 0;
 			int rightIndex = 0;
 			int resultIndex = 0;
-
+			
+			//Merge part
+			//comparing two numbers in right side and left side
 			while (resultIndex != result.length) {
 				if (leftIndex != left.length && rightIndex != right.length) {
 
